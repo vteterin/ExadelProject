@@ -140,12 +140,8 @@
     	  <plugin>
       		  <groupId>org.apache.maven.plugins</groupId>
       		  <artifactId>maven-surefire-plugin</artifactId>
-      		  <version>3.0.0-M1</version>
-      		  <configuration>
-       		   <parallel>methods</parallel>
-        	  <threadCount>10</threadCount>
-       		 </configuration>
-     	 </plugin>
+      		  <version>2.22.1</version>
+       	 </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
