@@ -115,8 +115,8 @@
             <scope>test</scope>
         </dependency>
 	<dependency>
-  	<groupId>org.apache.maven.report.plugin</groupId>
-  		<artifactId>maven-surefire-report-plugin</artifactId>
+  	<groupId>org.apache.maven.plugin</groupId>
+  		<artifactId>maven-surefire-plugin</artifactId>
  		 <version>2.22.1</version>
 	</dependency>
 
