@@ -114,14 +114,7 @@
             <version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
-	<dependency>
-  	<groupId>org.apache.maven.surefire.plugin</groupId>
-  		<artifactId>surefire-testng-utils</artifactId>
- 		 <version>3.0.0-M1</version>
-	</dependency>
-
-
-    </dependencies>
+	    </dependencies>
 
     <build>
         <plugins>
