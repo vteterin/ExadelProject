@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+<!--Alternative version-->
     <groupId>breaking-news</groupId>
     <artifactId>breaking-news-main</artifactId>
     <packaging>war</packaging>
@@ -43,7 +43,7 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        
+
         <!--Web-->
         <dependency>
             <groupId>javax.servlet</groupId>
