@@ -14,35 +14,13 @@ import java.io.IOException;
 
 
 public class JavaSimple {
-  static class ExampleServlet extends HttpServlet {
-    static final Counter requests = Counter.build()
-        .name("hello_worlds_total")
-        .help("Number of hello worlds served.").register();
 
-    @Override
-    protected void doGet(final HttpServletRequest req, final HttpServletResponse resp)
-        throws ServletException, IOException {
-      resp.getWriter().println("Hello World!");
-      // Increment the number of requests.
-      requests.inc();
-    }
-  }
+  @Bean
+ServletRegistrationBean registerPrometheusExporterServlet(CollectorRegistry metricRegistry) {
+    ServletRegistrationBean srb = new ServletRegistrationBean();
+    srb.setServlet(new MetricsServlet(metricRegistry));
+    srb.setUrlMappings(Arrays.asList("/prometheus"));
+    return srb;
 
-  public static void main( String[] args ) throws Exception {
-      Server server = new Server(1234);
-      ServletContextHandler context = new ServletContextHandler();
-      context.setContextPath("/");
-      server.setHandler(context);
-      // Expose our example servlet.
-      context.addServlet(new ServletHolder(new ExampleServlet()), "/");
-      // Expose Promtheus metrics.
-      context.addServlet(new ServletHolder(new MetricsServlet()), "/metrics");
-      // Add metrics about CPU, JVM memory etc.
-      DefaultExports.initialize();
-
-
-      // Start the webserver.
-      server.start();
-      server.join();
   }
 }
