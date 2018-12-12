@@ -1,10 +1,8 @@
 package io.Prometheus;
 
+import io.prometheus.client;
 import io.prometheus.client.Counter;
-import io.prometheus.client.exporter.MetricsServlet;
-import io.prometheus.client.hotspot.DefaultExports;
-import org.eclipse.jetty.server.Server;
-import java.io.IOException;
+
 
 
 public class JavaSimple {
